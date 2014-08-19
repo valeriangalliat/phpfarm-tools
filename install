@@ -1,8 +1,8 @@
 #!/bin/sh -e
 
-readonly PROGDIR=$(dirname "$0")
+cd "$(dirname "$0")/../inst/bin"
 
-for file in phpfarm-*
-do
-    ln -fsv "../../tools/$file" "$PROGDIR/../inst/bin/$file"
+for file in $(find "../../tools" -name 'phpfarm-*'); do
+    base=$(basename "$file")
+    ln -fsv "$file" "$base"
 done
