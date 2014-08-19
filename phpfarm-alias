@@ -1,0 +1,21 @@
+#!/bin/sh -e
+
+cd "$(dirname "$0")"
+
+if [ -z "$1" ]; then
+    echo "Usage: phpfarm-alias <version> [<alias>]"
+    exit 1
+fi
+
+version=$1; shift
+
+if [ -z "$1" ]; then
+    alias=$(echo "$version" | sed 's/\.[^\.]*$//')
+else
+    alias=$1; shift
+fi
+
+for file in $(find . -name "*-$version"); do
+    base=$(echo "$file" | sed 's/-[^-]*$//')
+    ln -fsv "$file" "$base-$alias"
+done

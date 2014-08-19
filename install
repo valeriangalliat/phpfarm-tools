@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+readonly PROGDIR=$(dirname "$0")
+
+for file in phpfarm-*
+do
+    ln -fsv "../../tools/$file" "$PROGDIR/../inst/bin/$file"
+done
