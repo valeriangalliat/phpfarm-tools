@@ -1,7 +1,7 @@
 phpfarm tools
 =============
 
-> A set of tools for phpfarm
+> A set of tools for phpfarm.
 
 Installation
 ------------
@@ -15,8 +15,8 @@ tools/install
 The `install` script will link `tools/phpfarm-*` in
 `inst/bin/phpfarm-*`.
 
-`phpfarm-alias`
----------------
+phpfarm-alias
+-------------
 
 ### Automatic
 
